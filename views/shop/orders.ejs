@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <% for (let order of orders) { %>
+            <h1><%= order.id %></h1>
+            <% order.products.forEach((product) =>  { %>
+                <div class="cart_item">
+                    
+                    <h2 class="cart_header"><%= product.title %></h2>
+                    <h2 class="cart_header">QTY:<%= product.OrderItem.quantity %></h2>
+                </div>
+            <% }) %>
+            
+        <% } %>
+        <%- include('../includes/end.ejs') %>

@@ -1,0 +1,41 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (prods.length > 0) { %>
+            <div class="cart_items">
+                <% for (let product of prods) { %>
+                    <div class="cart_item">
+                        <h2 class="cart_header"><%= product.title %></h2>
+                        <h2 class="cart_header">QTY:<%= product.CartItem.quantity %></h2>
+                        <form method="get" action="/deleteCart-item/<%= product.id %>">
+                            <button type="submit" class="delete_btn">Delete</button>
+                        </form>
+                    </div>
+                    
+                    
+                <% } %>
+                <hr>
+                <div class="centered">
+                    <form method="POST" action="/create-order">
+                        <button type="submit" class="btn">checkout</button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="checkout_btn_container">
+                
+            </div>
+           
+        <% } else { %>
+            <h1>No Products Found!</h1>
+        <% } %>
+        <div>
+            
+        </div>
+    </main>
+<%- include('../includes/end.ejs') %>
