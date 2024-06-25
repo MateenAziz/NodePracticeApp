@@ -1,2 +1,3 @@
 # NodePracticeApp
-created the project learning node from Udemy
+created the project learning node js from Udemy
+ 
